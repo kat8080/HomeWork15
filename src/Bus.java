@@ -1,5 +1,6 @@
 
-public final class Bus extends Transport {
+public final class Bus extends Transport implements Competing{
+
 
 
     public Bus(String brand, String model, Float engineVolume) {
@@ -19,5 +20,20 @@ public final class Bus extends Transport {
     @Override
     public String toString() {
         return "Автобус: " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();
+    }
+
+    @Override
+    public void pitStop() {
+        System.out.println("Пит-стоп 3 секунды");
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга 20 минут");
+    }
+
+    @Override
+    public void maximumSpeed() {
+        System.out.println("Максимальная скорость 220 км/ч");
     }
 }

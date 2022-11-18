@@ -25,8 +25,8 @@ public abstract class Transport {
         return engineVolume;
     }
 
-    public abstract void startMoving();
-    public abstract void finishMoving();
+    public abstract void startMoving();   //начало движения
+    public abstract void finishMoving();  //конец дыижения
 
     @Override
     public boolean equals(Object o) {

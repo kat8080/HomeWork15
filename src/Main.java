@@ -6,15 +6,27 @@ public class Main {
         Car bmv = new Car("BMW", "Z8o", 3.2f);
         Car kia = new Car("Kia", "Sportage 4-го поколения", 3.0f);
 
+        lada.pitStop();
+        lada.bestLapTime();
+        lada.maximumSpeed();
+
         Truck kamaz = new Truck("КамАЗ", "4246", 4.5f);
         Truck gaz = new Truck("ГАЗ", "6547", 4.0f);
         Truck zil = new Truck("ЗИЛ", "258", 4.3f);
         Truck ural = new Truck("УРАЛ", "951", 4.6f);
 
+        kamaz.pitStop();
+        kamaz.bestLapTime();
+        kamaz.maximumSpeed();
+
         Bus liaz = new Bus("ЛиАЗ", "4292", 3.2f);
         Bus paz = new Bus("ПАЗ", "325", 3.5f);
         Bus maz = new Bus("МАЗ", "232", 3.1f);
-        
+
+        paz.pitStop();
+        paz.bestLapTime();
+        paz.maximumSpeed();
+
 
     }
 }

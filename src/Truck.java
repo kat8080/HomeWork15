@@ -1,4 +1,4 @@
-public final class Truck extends Transport {
+public final class Truck extends Transport implements Competing{
     public Truck(String brand, String model, Float engineVolume) {
         super(brand, model, engineVolume);
     }
@@ -14,5 +14,20 @@ public final class Truck extends Transport {
     }
     public String toString() {
         return "Грузовой автомобиль: " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();
+    }
+
+    @Override
+    public void pitStop() {
+        System.out.println("Пит-стоп 3 секунды");
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга 15 минут");
+    }
+
+    @Override
+    public void maximumSpeed() {
+        System.out.println("Максимальная скорость 230 км/ч");
     }
 }
