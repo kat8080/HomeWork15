@@ -1,3 +1,7 @@
+import Transport.Transport;
+import Transport.Truck;
+import Transport.Car;
+import Transport.Bus;
 public class Main {
     public static void main(String[] args) {
 
@@ -27,6 +31,22 @@ public class Main {
         paz.bestLapTime();
         paz.maximumSpeed();
 
+        Driver ivanov = new Driver("Иванов Иван Иванович", "С", 4, kamaz);
+
+        System.out.println(ivanov);
+        ivanov.carRace(kamaz);
+
+        Driver petrov = new Driver("Петров Петр Иванович", "В", 4, kamaz);
+
+        System.out.println(petrov);
+        ivanov.carRace(lada);
+
+        Driver sidorov = new Driver("Сидоров Сергей Петрович", "D", 4, kamaz);
+
+        System.out.println(sidorov);
+        ivanov.carRace(liaz);
 
     }
+
+
 }

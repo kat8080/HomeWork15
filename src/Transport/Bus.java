@@ -1,5 +1,6 @@
+package Transport;
 
-public final class Bus extends Transport implements Competing{
+public final class Bus extends Transport implements Competing {
 
 
 

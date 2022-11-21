@@ -1,4 +1,6 @@
-public final class Car extends Transport implements Competing{
+package Transport;
+
+public final class Car extends Transport implements Competing {
 
 
     public Car(String brand, String model, Float engineVolume) {
