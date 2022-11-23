@@ -2,10 +2,12 @@ import Transport.Transport;
 import Transport.Truck;
 import Transport.Car;
 import Transport.Bus;
+
+
 public class Main {
     public static void main(String[] args) {
 
-        Car lada = new Car("Lada", "Granta", 2.6f);
+        Car lada = new Car("Lada", "Granta", 2.6f, Transport.BodyType.SEDAN);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.5f);
         Car bmv = new Car("BMW", "Z8o", 3.2f);
         Car kia = new Car("Kia", "Sportage 4-го поколения", 3.0f);
@@ -23,7 +25,7 @@ public class Main {
         kamaz.bestLapTime();
         kamaz.maximumSpeed();
 
-        Bus liaz = new Bus("ЛиАЗ", "4292", 3.2f);
+        Bus liaz = new Bus("ЛиАЗ", "4292", 3.2f,25);
         Bus paz = new Bus("ПАЗ", "325", 3.5f);
         Bus maz = new Bus("МАЗ", "232", 3.1f);
 

@@ -1,8 +1,12 @@
 package Transport;
 
 public class Truck extends Transport implements Competing {
-        public Truck(String brand, String model, Float engineVolume) {
+
+    private final LoadCapacity loadCapacity;
+
+        public Truck(String brand, String model, Float engineVolume,LoadCapacity loadCapacity) {
             super(brand, model, engineVolume);
+            this.loadCapacity = loadCapacity;
         }
 
         @Override
@@ -14,7 +18,8 @@ public class Truck extends Transport implements Competing {
         public void finishMoving() {
             System.out.println("Закончить движение");
         }
-        @Override
+
+    @Override
         public void pitStop() {
             System.out.println("Пит-стоп 3 секунды");
         }
@@ -28,6 +33,15 @@ public class Truck extends Transport implements Competing {
         public void maximumSpeed() {
             System.out.println("Максимальная скорость 230 км/ч");
         }
+
+    @Override
+    public void printType() {
+        if (this.loadCapacity != null) {
+            System.out.println(loadCapacity);
+        } else {
+            System.out.println("Информации не достаточно");
+        }
+    }
 
     public String toString() {
         return "Грузовой автомобиль: " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();

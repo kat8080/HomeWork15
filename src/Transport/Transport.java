@@ -30,6 +30,8 @@ public abstract class Transport {
     public abstract void startMoving();   //начало движения
     public abstract void finishMoving();  //конец дыижения
 
+    public abstract void printType();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
