@@ -1,62 +1,47 @@
 package Data;
-
-
-import java.util.Objects;
-
 public class Data {
+    private static final String VALID_CHARACTERS = "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM0123456789_"; //строка разрешенных символов
 
-    private String login;
-    private String password;
-    private String confirmPassword;
-
-    public Data(String login, String password, String confirmPassword) {
-        setLogin(login);
-        setPassword(password);
-        setConfirmPassword(confirmPassword);
+    private Data() {
     }
 
-    public String getLogin() {
-        return login;
-    }
 
-    public void setLogin(String login) {
-
-        this.login = checkCharacters(login);
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = checkCharacters(password);
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = checkCharacters(confirmPassword);
-    }
-
-    public static String checkCharacters(String symbols) {
-
-        if (symbols.length() < 1 && symbols.length() > 20) {
-            throw new WrongLoginException("Длина должна быть от 1 до 20");
+    public static boolean validate(String login,
+                                   String password,
+                                   String confirmPassword) {
+        try {
+            check(login, password, confirmPassword);
+        } catch (WrongLoginException |  WrongPasswordException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
-        if (symbols.matches("^[a-zA-Z0-9_]+${1,20}")) {
-            return symbols;
+        return true;
+    }
+
+    public static void check(String login,
+                             String password,
+                             String confirmPassword) throws WrongLoginException, WrongPasswordException {
+        if (!validate(login)) {
+            throw new WrongLoginException("Логин не верный!");
         }
-        throw new WrongLoginException("Строка должна содержать в себе только латинские буквы, цифры и знак подчеркивания.");
+        if (!validate(password)) {
+            throw new WrongPasswordException("Пароль не верный!");
+        }
+        if (!password.equals(confirmPassword)) {
+            throw new WrongPasswordException("Пароли должны совпадать!");
+
+
+            private static boolean validate(String a) {
+        if (a.length() > 20) {
+            return false;
+        }
+        for (int i = 0; i < a.length(); i++) {
+            if (!VALID_CHARACTERS.contains(String.valueOf(a.charAt(i)))) {
+                return false;
+            }
+        }
+        return true;
     }
+}}}
 
 
-
-
-    @Override
-    public String toString() {
-        return
-                "login- " + login + ", password- " + password + ", confirmPassword- " + confirmPassword;
-    }
-}

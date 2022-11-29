@@ -32,6 +32,8 @@ public abstract class Transport {
 
     public abstract void printType();
 
+    public abstract boolean service();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

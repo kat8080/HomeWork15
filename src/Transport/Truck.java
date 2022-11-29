@@ -43,6 +43,11 @@ public class Truck extends Transport implements Competing {
         }
     }
 
+    @Override
+    public boolean service() {
+        return Math.random()>0.75;    // Это вместо tru. Случайные случаи. Диагностику проходят 75% грузовиков
+    }
+
     public String toString() {
         return "Грузовой автомобиль: " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();
     }

@@ -8,7 +8,7 @@ public class Driver<T extends Transport> {
 
     public Driver(String fio, String category, int experience, T auto) {
         this.fio = fio;
-        this.category = category;
+        setCategory(category);
         this.experience = experience;
         this.auto = auto;
     }
@@ -22,6 +22,9 @@ public class Driver<T extends Transport> {
     }
 
     public void setCategory(String category) {
+        if (category == null) {
+            throw new IllegalArgumentException("Необходимо указать тип прав!");
+        }
         this.category = category;
     }
 

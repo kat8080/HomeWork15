@@ -44,6 +44,11 @@ public final class Car extends Transport implements Competing {
     }
 
     @Override
+    public boolean service() {
+        return Math.random()>0.7;    // Это вместо tru. Случайные случаи. Диагностику проходят 70% машин
+    }
+
+    @Override
     public String toString() {
         return "Легковой втомобиль:  " + getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume();
     }
